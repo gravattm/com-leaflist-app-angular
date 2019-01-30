@@ -1,0 +1,52 @@
+.person-card {
+    min-width: 260px;
+    padding: 24px;
+}
+
+.card {
+    margin-top: 54px;
+    margin-bottom: 0;
+}
+
+.picture-border-connected {
+    border: 6px solid #58e0ab;
+}
+
+.person-card .background {
+    border-radius: 50%;
+    height: 108px;
+    width: 108px;
+    background-color: white;
+    background-size: cover;
+    margin: -54px auto 0;
+}
+
+.action-font {
+    font-size: 18px;
+}
+
+.secondary-label {
+    min-height: 24px;
+    text-align: center;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.button-under-widget {
+    display: flex;
+    margin-top: -18px;
+}
+
+.request-button {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leaf-icon {
+    width: 40px;
+    height: 20px;
+}

@@ -1,0 +1,48 @@
+<div id="mainContainer">
+  <div class="container">
+    <div class="row">
+      <h1>Search :</h1>
+      <div class="pt-1">{{searchString}}</div>
+    </div>
+    <div class="row top24">
+      <div class="col-md-12 no-gutters no-padding mt-3 mt-sm-3 mt-md-0">
+        <div class="card margin12">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="text-center">Individuals</h2>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row justify-center flex-wrap">
+              <leaflist-person-card [isInvitation]="isInvitation" *ngFor="let i of [1,2,3,4]"></leaflist-person-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row top24">
+      <div class="col-md-12 no-gutters no-padding mt-3 mt-sm-3 mt-md-0">
+        <div class="card margin12">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="text-center">Organizations</h2>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row justify-center flex-wrap ">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-4" *ngFor="let i of [1,2,3,4]">
+                <leaflist-organisation-card></leaflist-organisation-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.bg-white {
+  background-color: #FFF;
+}
+
+.bg-green {
+  background-color: #58e0ab;
+}
+
+.bg-off-white {
+  background-color: #f1f4f9;
+}
+
+.white-font {
+  color: #FFF;
+}
+
+.black-font {
+  color: #000;
+}
+
+.red-font {
+  color: red;
+}
+
+.action-font {
+  color: #3fc380;
+}
+
+.grey-font {
+  color: #a7b0b7;
+}
+
+.body-secondary {
+  color: #a7b0b7;
+}
+
+.body-primary {
+  color: #62646d;
+}

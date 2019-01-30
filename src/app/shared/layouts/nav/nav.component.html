@@ -1,0 +1,33 @@
+<nav class="navbar navbar-light bg-white fixed-top">
+  <a class="navbar-brand ml-0" href="/" [ngClass]="{disabled: searchIsOpen}">
+    <img src="/assets/images/leaflist-logo-header.svg" alt="LeafList">
+  </a>
+
+  <leaflist-searchBar class="flex-fill mr-1" (searchSubmit)="onSearch($event)"></leaflist-searchBar>
+
+  <ng-container *ngIf="isAuthenticated(); then loggedIn; else notLoggedIn"></ng-container>
+
+  <ng-template #notLoggedIn>
+    <div class="login-button ml-auto">
+      <span class="d-none d-md-inline-block">Already a member?</span><a class=" btn btn-outline" (click)="onLoginClicked()">Login</a>
+    </div>
+  </ng-template>
+
+  <ng-template #loggedIn>
+    <div class=" ml-auto profile-container align-center">
+      <div class="profile-photo" style="background-image: url(&quot;https://storage.googleapis.com/leaflist-com.appspot.com/5709744572465152/0.jpeg&quot;);"></div>
+      <div class="left24 profile-name">Mark DeVries</div>
+      <div class="align-center left24 mr-0 profile-data">
+        <div class="leaf-icon" style="width: 20px; height: 20px;"></div>
+        <div class="left24 body-secondary" style="font-size: 16px;">417</div>
+      </div>
+      <button class="search-button left24" [ngClass]="{disabled: searchIsOpen}" type="button" aria-label="Search"
+        (click)="onSearchButtonClicked()">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
+      <button class="navbar-toggler left24" type="button" aria-label="Toggle navigation" (click)="onProfileButtonClicked()">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+    </div>
+  </ng-template>
+</nav>

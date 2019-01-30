@@ -1,0 +1,28 @@
+<div class="profilePopupPanel popupPanel flex-grow-1 action-background" [ngClass]="{open: isOpen}">
+  <img class="leaflist-logo" src="../../../../../assets/images/leaflist-logo-header-white.svg">
+  <div class="close-btn" title="Close" (click)="onCloseButtonClicked()">×</div>
+  <div class="profile-wrapper">
+    <div class="profile-container row justify-content-center align-self-center">
+      <div class="col-md-6 no-gutters profile-item">
+        <img class="profile-image" src="https://storage.googleapis.com/leaflist-com.appspot.com/5709744572465152/0.jpeg" />
+        <div class="profile-name">Mark DeVries</div>
+        <div class="profile-points-container text-center">
+          <img class="leaf-icon-white" src="../../../../../assets/images/leaf-icon-white.svg" />
+          <span class="profile-points body-primary left24">767</span>
+        </div>
+      </div>
+      <div class="col-md-6 no-gutters profile-item profile-links-container">
+        <ul class="profile-links">
+          <li><a routerLink="/dashboard">Dashboard</a></li>
+          <li><a>News</a></li>
+          <li><a>Industry Directory</a></li>
+          <li><a>Opportunities</a></li>
+          <li><a>Analytics</a></li>
+          <li><a>Connections</a></li>
+          <li><a>My Account</a></li>
+          <li><a (click)="logout()">Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

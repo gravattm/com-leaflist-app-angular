@@ -1,0 +1,124 @@
+.navbar {
+  height: 72px;
+  border-bottom: 1px solid #e3e3e3;
+  background: #FFF;
+  padding: 0 12px;
+}
+
+.navbar-brand {
+  height: 48px;
+  display: block;
+  padding: 0;
+}
+
+.navbar-brand img {
+  height: 100%;
+  width: auto;
+}
+
+.disabled {
+  display: none !important;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-leaflist>li {
+  display: inline-block;
+}
+
+.nav-item {
+  font-family: 'Karla', sans-serif;
+  width: auto;
+  line-height: 32px;
+  height: 100%;
+  flex: 1;
+  margin-left: 20px;
+}
+
+.nav-item a {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 32px;
+  height: 36px;
+}
+
+.nav-item-login span {
+  margin-right: 10px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  flex-direction: row;
+}
+
+.profile-photo {
+  display: none;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.profile-name {
+  display: none;
+}
+
+.profile-data {
+  display: none;
+  flex: 0 0 auto;
+  flex-direction: row;
+}
+
+.search-button {
+  display: block;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #62646d;
+  width: 1em;
+  cursor: pointer;
+}
+
+.navbar-toggler {
+  color: #62646d;
+  border: none;
+  width: 1em;
+  margin-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    height: 90px;
+    padding: 0 24px;
+  }
+  .navbar-brand {
+    display: block !important;
+    height: 60px;
+  }
+  nav-item {
+    margin-left: 12px;
+  }
+  .profile-photo {
+    display: inline;
+  }
+  .profile-name {
+    display: block;
+  }
+  .profile-data {
+    display: flex;
+  }
+  .navbar-toggler {
+    margin-right: 0;
+  }
+  .search-button {
+    display: none;
+  }
+}

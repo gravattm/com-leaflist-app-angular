@@ -1,0 +1,146 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  cursor: pointer;
+  height: 36px;
+  letter-spacing: 1px;
+  padding: 0 18px;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 2s ease, background 2s ease;
+}
+
+.btn-outline {
+  min-width: 72px;
+  box-shadow: 0 6px 24px #ddd;
+  border: 2px solid #58e0ab;
+  color: #58e0ab !important;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  text-transform: uppercase;
+  box-shadow: 0 6px 24px #ddd;
+}
+
+.icon-button-medium {
+  font-size: 24px;
+  line-height: 48px;
+}
+
+.icon-button-medium:hover {
+  color: #242c37;
+}
+
+.button-outline {
+  border: 2px solid #58e0ab;
+  color: #58e0ab;
+  font-size: 12px !important;
+}
+
+.button-outline.inactive {
+  border: 2px solid #a7b0b7;
+}
+
+.button-small, .button-small:focus, .button-small:active {
+  background: #58e0ab;
+  color: #fff;
+  border: none;
+}
+
+.button-small.inactive, .button-outline.inactive {
+  background: #a7b0b7;
+  color: #fff;
+}
+
+.button-under-widget {
+  margin-top: -18px;
+}
+
+.action-background .button-small {
+  background: #f1f4f9;
+  box-shadow: 0 6px 24px #3fc380;
+  color: #3fc380;
+}
+
+.action, .button-outline, .button-flat, .button-small, .button {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.action:before, .button-flat:before, .button-outline:before, .button-small:before, .button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+
+.action:active:before, .button-outline:active:before, .button-flat:active:before, .button-small:active:before, .button:active:before {
+  transform: scale(0, 0);
+  opacity: .2;
+  transition: 0s;
+}
+
+.action.divider:after {
+  color: #999;
+  content: "|";
+  font-size: 12px;
+  margin: 0 12px;
+  opacity: 0.5;
+}
+
+.button, .button-outline, .button-flat, .button-small {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  cursor: pointer;
+  height: 36px;
+  letter-spacing: 1px;
+  padding: 0 18px;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 2s ease, background 2s ease;
+}
+
+.button-row>* {
+  margin: 0 6px;
+}
+
+.button {
+  min-width: 240px;
+}
+
+.button-small, .button-flat, .button-outline {
+  min-width: 108px;
+}
+
+.button-small, .button-outline {
+  box-shadow: 0 6px 24px #ddd;
+}
+
+.col>.button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn-outline {
+    min-width: 108px;
+  }
+}

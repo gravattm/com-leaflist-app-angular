@@ -1,0 +1,25 @@
+<form class="form-inline " novalidate="">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group searchBox mt-3 mt-sm-2 mt-md-1 ">
+        <input aria-label="Search" class="form-control" name="search" placeholder="Search" type="search">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="col-12 col-sm-12 col-md-6 col-lg-4 col-form-label text-center text-sm-left">Sort by:</label>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+          <select class="form-control">
+            <option value='firstName'>First Name</option>
+            <option value='lastName'>Last Name</option>
+            <option value='newestFirst' selected>Newest First</option>
+            <option value='oldestFirst'>Oldest First</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-center flex-wrap">
+      <leaflist-person-card [isInvitation]="isInvitation" *ngFor="let i of [1,2,3,4]"></leaflist-person-card>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,40 @@
+<ng-container *ngIf="directRequests">
+  <leaflist-direct-request [isDashboard]="true"></leaflist-direct-request>
+</ng-container>
+<ng-container *ngIf="connectionApprovals">
+  <p *ngIf="directRequests">&nbsp;</p>
+  <leaflist-connection-approval [isDashboard]="true"></leaflist-connection-approval>
+</ng-container>
+<ng-container *ngIf="introductions">
+  <p *ngIf="directRequests || connectionApprovals">&nbsp;</p>
+  <leaflist-introduction></leaflist-introduction>
+</ng-container>
+<ng-container>
+  <p *ngIf="directRequests || connectionApprovals || introductions">&nbsp;</p>
+  <leaflist-invitations></leaflist-invitations>
+</ng-container>
+<p>&nbsp;</p>
+<div class="row">
+  <div class="col-md-12 no-gutters no-padding">
+    <div class="card margin12">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Connections</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row noshrink experience-card top24" *ngIf="!connections; else connectionList">
+          <div class="col-md-12 text-center grey-font font-large">
+            You currently have no connections. Start growing your network, planting the seeds for new business
+            opportunities, and improving the reputation of the cannabis industry.
+          </div>
+        </div>
+        <ng-template #connectionList>
+          <leaflist-person-card-list></leaflist-person-card-list>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

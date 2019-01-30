@@ -1,0 +1,16 @@
+<div class="popupPanelGlass" aria-hidden="true"></div>
+<div class="experiencePopupPanel popupPanel" [ngClass]="{open: isOpen}">
+  <div class="popupContent">
+    <div class="card">
+      <div class="card-body no-padding sides24">
+        Test
+        <div class="card-footer">
+          <div>Delete this experience</div>
+          <div class="flex"></div>
+          <button class="button-outline" (click)="closeButtonClicked()">Cancel</button>
+          <button class="button-small left24" type="submit" [disabled]="!experienceForm.valid">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

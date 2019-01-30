@@ -1,0 +1,28 @@
+#mainContainer {
+  background-color: #f1f4f9;
+}
+
+.nav {
+  margin: 0 10px;
+}
+
+.nav-link {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a7b0b7;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  padding: 1.5rem 1.2rem;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item.active {
+  border-bottom: 4px solid #58e0ab !important;
+}
+
+.nav-item:focus {
+  outline: none;
+}

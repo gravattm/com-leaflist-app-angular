@@ -1,0 +1,71 @@
+.card {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.experiencePopupPanel {
+  width: 100%;
+  height: auto;
+  clip-path: inset(50% 50% 50% 50%);
+  transition: clip-path .25s ease-out;
+  text-transform: uppercase;
+}
+
+.experiencePopupPanel.open {
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+@media (min-width: 768px) {
+  .experiencePopupPanel {
+    min-height: auto;
+    max-width: 768px;
+    height: auto;
+  }
+}
+
+.experiencePopupPanel label {
+  height: 14px;
+  margin: 0;
+}
+
+.experiencePopupPanel .row .item {
+  display: none;
+}
+
+.experiencePopupPanel .row .item.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .experiencePopupPanel {
+    min-width: 768px;
+    clip: rect(auto, auto, auto, auto);
+  }
+}
+
+.form-group textarea {
+  width: 100%;
+  resize: none;
+}
+
+.card-footer {
+  border-top: 1px solid #f1f4f9 !important;
+  align-items: center;
+  padding: 24px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-body {
+  padding: 0 24px;
+}
+
+.row {
+  margin: 0;
+}
+
+.top6 {
+  padding-top: 6px !important;
+}

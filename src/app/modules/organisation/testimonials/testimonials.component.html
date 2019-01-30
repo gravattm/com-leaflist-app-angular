@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12 py-4">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-12">
+            <h2>Testimonials</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row noshrink experience-card top24" *ngIf="!connections; else connectionList">
+          <div class="col-md-12 text-center grey-font font-large">
+            No testimonials yet.
+          </div>
+
+          <div class="button-outline button-large mx-auto" (click)="onAddTestimonialClick()">
+            <div>Add Testimonial</div>
+          </div>
+        </div>
+        <ng-template #connectionList>
+          <leaflist-person-card-list></leaflist-person-card-list>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

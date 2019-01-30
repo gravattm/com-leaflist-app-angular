@@ -1,0 +1,79 @@
+.card {
+    margin-top: 96px;
+    margin-bottom: 0;
+}
+
+.profile-card .card-body {
+    background-color: #fff !important;
+}
+
+.profile-name {
+    color: #212223;
+    font-size: 30px;
+}
+
+.activity-points {
+    font-size: 16px;
+}
+
+.picture-border-connected {
+    border: 6px solid #58e0ab;
+}
+
+.profile-card .background {
+    border-radius: 50%;
+    height: 192px;
+    width: 192px;
+    background-color: white;
+    background-size: cover;
+    margin: -96px auto 0;
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        margin-top: 54px;
+    }
+    .profile-card .background {
+        border-radius: 50%;
+        height: 108px;
+        width: 108px;
+        background-color: white;
+        background-size: cover;
+        margin: -54px auto 0;
+    }
+}
+
+.action-font {
+    font-size: 18px;
+}
+
+.secondary-label {
+    min-height: 24px;
+    text-align: center;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.button-under-widget {
+    display: flex;
+    margin-top: -18px;
+}
+
+.request-button {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leaf-icon {
+    width: 40px;
+    height: 20px;
+}
+
+.form-group textarea {
+    width: 100%;
+    resize: none;
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "emailType": "LeafList updates"
+    },
+    {
+        "id": 2,
+        "emailType": "New connection request"
+    },
+    {
+        "id": 3,
+        "emailType": "Connection request accepted"
+    },
+    {
+        "id": 4,
+        "emailType": "You or your organization tagged in news"
+    },
+    {
+        "id": 5,
+        "emailType": "New testimonial awaiting approval"
+    },
+    {
+        "id": 6,
+        "emailType": "New leaf earned"
+    },
+    {
+        "id": 7,
+        "emailType": "Badge approved"
+    },
+    {
+        "id": 8,
+        "emailType": "Donation confirmed"
+    }
+]

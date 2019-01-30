@@ -1,0 +1,16 @@
+#mainContainer {
+  padding: 0;
+  margin-bottom: 72px;
+}
+
+#questionContainer {
+  margin: 48px auto 0;
+  max-width: 700px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  #questionContainer {
+    margin: 12px auto 0;
+  }
+}

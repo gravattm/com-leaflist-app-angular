@@ -1,0 +1,58 @@
+#landingFooterWrapper {
+  width: 100%;
+  background: url('../../../../assets/images/landing2.png') no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+}
+
+#signupWrapper {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: -40px;
+}
+
+#triangleOverlay {
+  display: none;
+}
+
+h4 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+@media (min-width: 768px) {
+  #landingFooterWrapper {
+    text-align: center;
+    padding: 38% 0 0;
+    height: 0;
+  }
+  #landingFooterContent {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -360px;
+    width: 720px;
+    overflow: hidden;
+  }
+  #triangleOverlay {
+    display: block;
+    position: absolute;
+    background: url("../../../../assets/images/triangle-overlay.png") no-repeat;
+    background-size: contain;
+    height: 96px;
+    width: 96px;
+    right: 12%;
+    bottom: -55px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #signupWrapper {
+    bottom: 50px;
+  }
+}

@@ -1,0 +1,13 @@
+<a id="top" class="anchor"></a>
+<leaflist-navbar></leaflist-navbar>
+<leaflist-login-dialog *ngIf="showLoginDialog" class=""></leaflist-login-dialog>
+<leaflist-profile-dialog *ngIf="showProfileDialog" class=""></leaflist-profile-dialog>
+<leaflist-experience-dialog *ngIf="showExperienceDialog" class=""></leaflist-experience-dialog>
+<leaflist-invitation-dialog *ngIf="showInvitationDialog" class=""></leaflist-invitation-dialog>
+<leaflist-doner-dialog *ngIf="showDonerDialog" class=""></leaflist-doner-dialog>
+<div id="main">
+  <router-outlet></router-outlet>
+</div>
+<div class="app-footer">
+  <leaflist-footer></leaflist-footer>
+</div>

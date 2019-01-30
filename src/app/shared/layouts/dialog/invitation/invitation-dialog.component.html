@@ -1,0 +1,42 @@
+<ng-template #contentInvitation let-modal>
+  <div class="invitationPopupPanel " [ngClass]="{open: isOpen}">
+    <div class="popupContent">
+      <div class="card">
+        <div class="card-header">
+          <h4>INVITE USER</h4>
+        </div>
+        <form [formGroup]="invitationForm" (ngSubmit)="onSubmitForm()">
+          <div class="card-body">
+            <div class="px-3">
+              <div class="form-group">
+                <label for="firstName" class="label">FIRST NAME</label>
+                <input class="form-control" type="text" id="firstName" class="form-control" name="firstName"
+                  formControlName="firstName" maxlength="100">
+              </div>
+              <div class="form-group">
+                <label for="lastName" class="label">LAST NAME</label>
+                <input class="form-control" type="text" id="lastName" class="form-control" name="lastName"
+                  formControlName="lastName" maxlength="100">
+              </div>
+              <div class="form-group">
+                <label for="email" class="label">EMAIL</label>
+                <input class="form-control" type="text" id="email" class="form-control" name="email" rows="4"
+                  formControlName="email" maxlength="100">
+              </div>
+              <div class="form-group">
+                <label for="message" class="label">MESSAGE</label>
+                <textarea class="form-control" id="message" class="form-control" name="message" rows="4"
+                  formControlName="message"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="flex"></div>
+            <button class="button-outline btn" (click)="modal.dismiss('Cross click')">Cancel</button>
+            <button class="button-small left24" type="submit" [disabled]="!invitationForm.valid" (click)="modal.close('Save click')">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

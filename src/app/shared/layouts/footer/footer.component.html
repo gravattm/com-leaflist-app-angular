@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="footer-container">
+
+    <a (click)="onClick()" class="footer-top">Top</a>
+
+    <div class="row footer-links">
+      <div class="col-md-4 col-sm-12 link-section">
+        <p class="footer-image"><a routerLink="./">LeafList</a></p>
+        <div class="footer-social top24">
+          <a class="footer-social-link" href="https://www.twitter.com/joinleaflist" target="_blank">
+            <fa-icon [icon]="faTwitter"></fa-icon>
+          </a>
+          <a class="footer-social-link" href="https://www.facebook.com/leaflist" target="_blank">
+            <fa-icon [icon]="faFacebookF"></fa-icon>
+          </a>
+          <a class="footer-social-link" href="https://www.instagram.com/leaflist/" target="_blank">
+            <fa-icon [icon]="faInstagram"></fa-icon>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 link-section top24">
+        <p><a routerLink="/help/about">About Us</a></p>
+        <p><a routerLink="/help/contact">Contact Us</a></p>
+      </div>
+      <div class="col-md-4 col-sm-12 link-section">
+        <p><a routerLink="/help/terms">Terms of Service</a></p>
+        <p><a routerLink="/help/privacy">Privacy Policy</a></p>
+      </div>
+    </div>
+
+  </div>
+</footer>

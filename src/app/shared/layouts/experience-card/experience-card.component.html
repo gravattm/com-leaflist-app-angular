@@ -1,0 +1,33 @@
+<div class="row noshrink experience-card">
+  <div class="col-md-12">
+    <div class="row align-center link float-right action-font p-3 p-sm-2 p-md-1">
+      <div class="action-font">
+        <fa-icon [icon]="['fas', 'pencil-alt']"></fa-icon>
+      </div>
+      <div class="action-font link" (click)="onExperienceClicked(experience)">edit</div>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <div *ngIf="experience.logo" class="col col-md-2 align-content-center justify-content-center d-flex align-center">
+      <div class="logo-icon background-contain" [style.background-image]="backgroundImg"></div>
+    </div>
+    <div [ngClass]="{'col-md-10': (!experience.isCanabiesRelated && experience.logo), 
+    'col-md-9': (experience.isCanabiesRelated && experience.logo), 
+    'col-md-12': (!experience.isCanabiesRelated && !experience.logo), 
+    'col-md-11': (experience.isCanabiesRelated && !experience.logo)}">
+      <h6 class="action-font link">{{experience.organisation}}</h6>
+      <p>{{experience.title}}. {{experience.startMonth}},{{experience.startYear}} -
+        {{experience.isPresent ? 'Present' : experience.endMonth + ',' + experience.endYear}}
+      </p>
+      <p>{{experience.address ? experience.address + ',' : ''}}
+        {{experience.state}},
+        {{experience.country}}
+      </p>
+      <p>{{experience.responsibilities}}</p>
+      <button class="button-outline btn btn-large" (click)="onEdit()" *ngIf="isOrgEditable">Edit Organization</button>
+    </div>
+    <div class="col col-md-1 align-content-center justify-content-center d-flex align-center" *ngIf="experience.isCanabiesRelated">
+      <div class="cannabis-icon background-contain"></div>
+    </div>
+  </div>
+</div>

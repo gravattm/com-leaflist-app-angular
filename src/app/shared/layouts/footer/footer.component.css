@@ -1,0 +1,94 @@
+.footer {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 72px;
+  border-top: 1px solid #e3e3e3;
+}
+
+.footer-container {
+  position: relative;
+  padding-top: 48px;
+}
+
+.footer-top {
+  background: #a7b0b7;
+  color: #fff !important;
+  position: absolute;
+  right: 66px;
+  top: -21px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
+  line-height: 42px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.footer-top:hover {
+  text-decoration: none;
+}
+
+.footer-links {
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  color: #a7b0b7;
+}
+
+.footer-links .link-section {
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.footer-links .link-section p {
+  border-top: 1px solid #e3e3e3;
+  padding: 12px 0;
+  margin: 0;
+  width: 192px;
+  text-align: center;
+}
+
+.footer-image a {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url("../../../../assets/images/leaflist-logo-header.png");
+  background-size: contain;
+  width: 118px;
+  height: 36px;
+  margin: 0 auto;
+}
+
+.footer-links p.footer-image {
+  border: none !important;
+  padding-bottom: 0;
+}
+
+a.footer-social-link {
+  color: #a7b0b7;
+  font-size: 20px;
+  margin: 0 24px;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .footer-links .link-section {
+    align-items: flex-start;
+    margin-top: 0 !important;
+  }
+  .footer-links .link-section p {
+    border: none;
+    width: auto;
+    text-align: left;
+  }
+  .footer-social {
+    display: none;
+  }
+}

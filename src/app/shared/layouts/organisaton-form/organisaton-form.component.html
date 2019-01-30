@@ -1,0 +1,198 @@
+<div class="row">
+  <div class="col-md-12 no-gutters no-padding">
+    <div class="card margin12">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>LeafList</h2>
+          </div>
+          <div class="col-md-6 top24 text-left text-sm-right text-md-right text-lg-right">
+            <div class="sides action-font link d-block d-sm-inline d-md-inline" (click)="onCancel()">
+              <span class="action-font pr-2">&lt;</span>
+              <span class="action-font link btn-link">Back to My Organizations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="organisationForm" (ngSubmit)="onSubmit()" id="organisationForm" novalidate>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+
+              <div class="form-group">
+                <label for="name" class="label">Name</label>
+                <input class="form-control" type="text" formControlName="name" id="name" name="name" maxlength="64"
+                  tabindex="1" [ngClass]="{ 'is-invalid': organisationForm.controls.name.invalid && (organisationForm.controls.name.dirty || organisationForm.controls.name.touched || submitted)}">
+              </div>
+
+              <div class="form-group">
+                <label for="contact" class="label">Contact</label>
+                <input class="form-control" type="text" id="contact" formControlName="contact" name="contact" maxlength="64"
+                  tabindex="2" [ngClass]="{ 'is-invalid': organisationForm.controls.contact.invalid && (organisationForm.controls.contact.dirty || organisationForm.controls.contact.touched || submitted)}">
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="label">Contact Email</label>
+                <input class="form-control" type="email" id="email" formControlName="email" name="email" autocomplete="email"
+                  tabindex="3" [ngClass]="{ 'is-invalid': organisationForm.controls.email.invalid && (organisationForm.controls.email.dirty || organisationForm.controls.email.touched || submitted)}">
+              </div>
+
+              <div class="form-group">
+                <label for="website" class="label">Website</label>
+                <input class="form-control" type="text" id="website" formControlName="website" name="website" maxlength="64"
+                  tabindex="2" [ngClass]="{ 'is-invalid': organisationForm.controls.website.invalid && (organisationForm.controls.website.dirty || organisationForm.controls.website.touched || submitted)}">
+              </div>
+
+              <div class="form-group">
+                <label class="label">Phone</label>
+                <div class="row top6">
+
+                  <div class="col-sm-2">
+                    <select class="form-control" tabindex="6" formControlName="countryCode" [ngClass]="{ 'is-invalid': organisationForm.controls.countryCode.invalid && (organisationForm.controls.countryCode.dirty || organisationForm.controls.countryCode.touched  || submitted)}">
+                      <option value="">Select Country</option>
+                    </select>
+                  </div>
+
+                  <div class="col-sm-10">
+                    <input class="left6 form-control" type="text" formControlName="phone" placeholder="Phone number"
+                      tabindex="5" [ngClass]="{ 'is-invalid': organisationForm.controls.phone.invalid && (organisationForm.controls.phone.dirty || organisationForm.controls.phone.touched || submitted)}">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label">Address</label>
+                <div class="address">
+                  <div class="row top6">
+
+                    <div class="col-sm-12">
+                      <input class="form-control" type="text" formControlName="address" placeholder="Address" tabindex="4"
+                        [ngClass]="{ 'is-invalid': organisationForm.controls.address.invalid && (organisationForm.controls.address.dirty || organisationForm.controls.address.touched  || submitted)}">
+                    </div>
+
+                  </div>
+                  <div class="row top6">
+
+                    <div class="col-sm-7">
+                      <input class="form-control" type="text" formControlName="city" placeholder="City/Town" tabindex="4"
+                        [ngClass]="{ 'is-invalid': organisationForm.controls.city.invalid && (organisationForm.controls.city.dirty || organisationForm.controls.city.touched  || submitted)}">
+                    </div>
+
+                    <div class="col-sm-5">
+                      <input class="left6 form-control" type="text" formControlName="zipCode" placeholder="Zip/Postal code"
+                        tabindex="5" [ngClass]="{ 'is-invalid': organisationForm.controls.zipCode.invalid && (organisationForm.controls.zipCode.dirty || organisationForm.controls.zipCode.touched || submitted)}">
+                    </div>
+
+                  </div>
+                  <div class="row top6">
+
+                    <div class="col-sm-7">
+                      <select class="form-control" tabindex="6" formControlName="country" [ngClass]="{ 'is-invalid': organisationForm.controls.country.invalid && (organisationForm.controls.country.dirty || organisationForm.controls.country.touched  || submitted)}">
+                        <option value="">Select Country</option>
+                        <option *ngFor="let country of countryList" [value]="country.code">{{ country.name }}</option>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-5" *ngIf="organisationForm.controls.country.value === 'US'; else stateText">
+                      <select class="form-control" tabindex="7" formControlName="state" [ngClass]="{ 'is-invalid': organisationForm.controls.state.invalid && (organisationForm.controls.state.dirty || organisationForm.controls.state.touched || submitted)}">
+                        <option value="">Select State</option>
+                        <option *ngFor="let state of stateList" [value]="state.code">{{state.name}}</option>
+                      </select>
+                    </div>
+
+                    <ng-template #stateText>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control left6" formControlName="state" placeholder="State"
+                          tabindex="8" [ngClass]="{ 'is-invalid': organisationForm.controls.state.invalid && (organisationForm.controls.state.dirty || organisationForm.controls.state.touched || submitted)}">
+                      </div>
+                    </ng-template>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 offset-lg-1 col-lg-4">
+              <label class="label">Categories</label>
+
+              <div class="invalid-feedback" [ngClass]="{'d-block': submitted && organisationForm.controls.selectedCategories.invalid}"
+                *ngIf="submitted && organisationForm.controls.selectedCategories.invalid">Please,
+                select at least one industry role that applies to you.</div>
+
+              <table class="table table-striped" [formArrayName]="'categories'">
+                <colgroup>
+                  <col style="width: 36px;">
+                  <col style="width: 100%;">
+                </colgroup>
+                <tbody>
+                  <tr *ngFor="let category of organisationForm.controls.categories.controls; let i = index" [formGroup]="category">
+                    <td scope="row">
+                      <input type="checkbox" formControlName="checkbox" id="{{ category.controls.id.value }}" tabindex="9">
+                    </td>
+                    <td attr.for="{{ category.controls.id.value }}">{{ category.controls.text.value }}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-6  col-lg-3">
+
+              <div class="form-group col-md-12">
+                <label for="website" class="label">Logo</label>
+                <div class="text-center">
+                  <img class="" src="https://storage.googleapis.com/leaflist-com.appspot.com/5709744572465152/0.jpeg"><br />
+                  <input type="file" id="selectedFile" accept="image/*" style="display: none;" #fileInput tabindex="10" />
+                  <button class="button-outline top24 upload-btn" (click)="fileInput.click()">Upload Image</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="employees" class="label">Employees</label>
+                  <select class="form-control" tabindex="6" formControlName="employees" [ngClass]="{ 'is-invalid': organisationForm.controls.employees.invalid && (organisationForm.controls.employees.dirty || organisationForm.controls.employees.touched  || submitted)}">
+                    <option value=""></option>
+                    <option value="0-9">fewer than 10</option>
+                    <option value="10-49">10-49</option>
+                    <option value="50-249">50-249</option>
+                    <option value="250+">250+</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="yearEstablish" class="label">Year Established</label>
+                  <input class="form-control" type="text" id="yearEstablish" formControlName="yearEstablish" name="yearEstablish"
+                    maxlength="64" tabindex="2" [ngClass]="{ 'is-invalid': organisationForm.controls.yearEstablish.invalid && (organisationForm.controls.yearEstablish.dirty || organisationForm.controls.yearEstablish.touched || submitted)}">
+                </div>
+              </div>
+
+              <div class="form-group col-md-12">
+                <input tabindex="4" type="checkbox" id="isCanabiesRelated" name="isCanabiesRelated" formControlName="isCanabiesRelated"
+                  [ngClass]="{ 'is-invalid': organisationForm.controls.isCanabiesRelated.invalid && (organisationForm.controls.isCanabiesRelated.dirty || organisationForm.controls.isCanabiesRelated.touched || submitted)}">
+                <label for="isCanabiesRelated" class="label">Cannabies-related</label>
+              </div>
+
+              <div class="form-group col-md-12">
+                <input tabindex="5" type="checkbox" id="isNonProfit" name="isNonProfit" formControlName="isNonProfit"
+                  [ngClass]="{ 'is-invalid': organisationForm.controls.isNonProfit.invalid && (organisationForm.controls.isNonProfit.dirty || organisationForm.controls.isNonProfit.touched || submitted)}">
+                <label for="isNonProfit" class="label">Non-profit</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="yearEstablish" class="label">Description</label>
+                <textarea class="form-control" id="description" formControlName="description" name="description" rows="5"
+                  [ngClass]="{ 'is-invalid': organisationForm.controls.description.invalid && (organisationForm.controls.description.dirty || organisationForm.controls.description.touched || submitted)}"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="action-font font-large">Delete Organization</div>
+        <div class="flex"></div>
+        <button class="button-outline" (click)="onCancel()">Cancel</button>
+        <button class="button-small left24" type="submit" [disabled]="!organisationForm.valid" (click)="modal.close('Save click')">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

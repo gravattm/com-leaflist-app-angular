@@ -1,0 +1,8 @@
+{
+    "question": "Have you enjoyed your experience at dispensaries?",
+    "answers" : [
+        "Yes", 
+        "Somewhat",
+        "No"
+    ]
+}

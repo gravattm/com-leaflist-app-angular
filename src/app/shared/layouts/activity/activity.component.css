@@ -1,0 +1,61 @@
+.activity-points-container {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+}
+
+.activity-points-container img {
+  width: 20px;
+  height: 20px;
+}
+
+.activity-points {
+  font-size: 36px;
+}
+
+.progress-bar-bg {
+  max-width: 100%;
+  background: #f1f4f9;
+  margin-top: 6px;
+  height: 6px;
+}
+
+.progress-bar {
+  max-width: 100%;
+  width: 30%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(72, 204, 150, 0.5);
+  transition: width 2s ease-out;
+}
+
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.activity-list li {
+  margin: 0;
+  padding: 12px 0 0;
+  border-top: 1px solid #f1f4f9;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.activity-list li:first-child {
+  border-top: none;
+}
+
+.points-total {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 48px;
+}
+
+.points-date {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

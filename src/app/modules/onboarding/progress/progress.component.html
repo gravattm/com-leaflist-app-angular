@@ -1,0 +1,11 @@
+<div class="card padding24 margin12">
+  <div class="progress-bar-bg background-primary {{_currentStep.segmentId}}">
+    <div class="progress-bar action-background"></div>
+  </div>
+  <ul class="progress-sections">
+    <li *ngFor="let step of steps; let i = index" [ngClass]="{'current': currentStep === step, 'completed': i < currentIndex}">
+      <div class="progress-circle"></div>
+      <div class="progress-section-label">{{step.label}}</div>
+    </li>
+  </ul>
+</div>

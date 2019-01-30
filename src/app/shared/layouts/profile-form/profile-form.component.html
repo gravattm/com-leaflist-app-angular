@@ -1,0 +1,115 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" id="profileForm" novalidate>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+
+      <div class="form-group">
+        <label for="firstName" class="label">First name</label>
+        <input class="form-control" type="text" formControlName="firstName" id="firstName" name="firstName" maxlength="64"
+          tabindex="1" [ngClass]="{ 'is-invalid': profileForm.controls.firstName.invalid && (profileForm.controls.firstName.dirty || profileForm.controls.firstName.touched || submitted)}">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName" class="label">Last name</label>
+        <input class="form-control" type="text" id="lastName" formControlName="lastName" name="lastName" maxlength="64"
+          tabindex="2" [ngClass]="{ 'is-invalid': profileForm.controls.lastName.invalid && (profileForm.controls.lastName.dirty || profileForm.controls.lastName.touched || submitted)}">
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="label">Email</label>
+        <input class="form-control" type="email" id="email" formControlName="email" name="email" autocomplete="email"
+          tabindex="3" [ngClass]="{ 'is-invalid': profileForm.controls.email.invalid && (profileForm.controls.email.dirty || profileForm.controls.email.touched || submitted)}">
+      </div>
+
+      <div class="form-group">
+        <label class="label">Address</label>
+        <div class="address">
+          <div class="row top6">
+
+            <div class="col-sm-12">
+              <input class="form-control" type="text" formControlName="name" placeholder="Name" tabindex="4" [ngClass]="{ 'is-invalid': profileForm.controls.name.invalid && (profileForm.controls.name.dirty || profileForm.controls.name.touched  || submitted)}">
+            </div>
+
+          </div>
+          <div class="row top6">
+
+            <div class="col-sm-12">
+              <input class="form-control" type="text" formControlName="address" placeholder="Address" tabindex="4"
+                [ngClass]="{ 'is-invalid': profileForm.controls.address.invalid && (profileForm.controls.address.dirty || profileForm.controls.address.touched  || submitted)}">
+            </div>
+
+          </div>
+          <div class="row top6">
+
+            <div class="col-sm-7">
+              <input class="form-control" type="text" formControlName="city" placeholder="City/Town" tabindex="4"
+                [ngClass]="{ 'is-invalid': profileForm.controls.city.invalid && (profileForm.controls.city.dirty || profileForm.controls.city.touched  || submitted)}">
+            </div>
+
+            <div class="col-sm-5">
+              <input class="left6 form-control" type="text" formControlName="zipCode" placeholder="Zip/Postal code"
+                tabindex="5" [ngClass]="{ 'is-invalid': profileForm.controls.zipCode.invalid && (profileForm.controls.zipCode.dirty || profileForm.controls.zipCode.touched || submitted)}">
+            </div>
+
+          </div>
+          <div class="row top6">
+
+            <div class="col-sm-7">
+              <select class="form-control" tabindex="6" formControlName="country" [ngClass]="{ 'is-invalid': profileForm.controls.country.invalid && (profileForm.controls.country.dirty || profileForm.controls.country.touched  || submitted)}">
+                <option value="">Select Country</option>
+                <option *ngFor="let country of countryList" [value]="country.code">{{ country.name }}</option>
+              </select>
+            </div>
+
+            <div class="col-sm-5" *ngIf="profileForm.controls.country.value === 'US'; else stateText">
+              <select class="form-control" tabindex="7" formControlName="state" [ngClass]="{ 'is-invalid': profileForm.controls.state.invalid && (profileForm.controls.state.dirty || profileForm.controls.state.touched || submitted)}">
+                <option value="">Select State</option>
+                <option *ngFor="let state of stateList" [value]="state.code">{{state.name}}</option>
+              </select>
+            </div>
+
+            <ng-template #stateText>
+              <div class="col-sm-5">
+                <input type="text" class="form-control left6" formControlName="state" placeholder="State" tabindex="8"
+                  [ngClass]="{ 'is-invalid': profileForm.controls.state.invalid && (profileForm.controls.state.dirty || profileForm.controls.state.touched || submitted)}">
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+      <label class="label">Industry role(s)</label>
+
+      <div class="invalid-feedback" [ngClass]="{'d-block': submitted && profileForm.controls.selectedIndustryRoles.invalid}"
+        *ngIf="submitted && profileForm.controls.selectedIndustryRoles.invalid">Please,
+        select at least one industry role that applies to you.</div>
+
+      <table class="table table-striped" [formArrayName]="'industryRoles'">
+        <colgroup>
+          <col style="width: 36px;">
+          <col style="width: 100%;">
+        </colgroup>
+        <tbody>
+          <tr *ngFor="let industryRole of profileForm.controls.industryRoles.controls; let i = index" [formGroup]="industryRole">
+            <td scope="row">
+              <input type="checkbox" formControlName="checkbox" id="{{ industryRole.controls.id.value }}" tabindex="9">
+            </td>
+            <td attr.for="{{ industryRole.controls.id.value }}">{{ industryRole.controls.text.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div class="col-12 col-sm-12 col-md-6  col-lg-4 d-flex align-items-center justify-content-center">
+
+      <div>
+        <img class="profile-image" src="https://storage.googleapis.com/leaflist-com.appspot.com/5709744572465152/0.jpeg"><br />
+        <input type="file" id="selectedFile" accept="image/*" style="display: none;" #fileInput tabindex="10" />
+        <button class="button-outline top24 upload-btn" (click)="fileInput.click()">Upload Image</button>
+      </div>
+
+    </div>
+  </div>
+</form>

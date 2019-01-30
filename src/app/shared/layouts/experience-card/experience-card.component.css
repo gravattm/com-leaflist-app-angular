@@ -1,0 +1,29 @@
+.experience-card .organization {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.experience-card .organization:hover {
+    text-decoration: underline;
+}
+
+.cannabis-icon {
+    background-image: url(https://my.leaflist.com/images/cannabis-related.png);
+    height: 60px;
+    width: 60px;
+}
+
+.logo-icon {
+    height: 150px;
+    width: 150px;
+}
+
+.background, .background-contain {
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+.background-contain {
+    background-size: contain;
+}

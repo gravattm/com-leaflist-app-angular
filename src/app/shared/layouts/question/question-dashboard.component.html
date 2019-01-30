@@ -1,0 +1,75 @@
+<div class="card margin12">
+  <div class="question-container">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h2>Where do you stand?</h2>
+        </div>
+        <div class="col-12 col-md-6 text-left text-md-right">
+          <div class="text-left text-md-right top24" (click)="suggestQuestion()" *ngIf="!suggestQuestionVisible && !suggestQuestionSuccessMsg">
+            <span class="link forgotPassword btn-link">Suggest question</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #answerQuestion [ngIf]="!suggestQuestionVisible && !suggestQuestionSuccessMsg">
+      <div class="card-body question-body">
+        <div class="p-3">
+          <h5>{{question?.question}}</h5>
+          <ul class="question-answers">
+            <li *ngFor="let item of question?.answers, let i = index" [attr.data-selected]="item === selectedResponse"
+              (click)="onSelect(item)" [class.selected]="item === selectedResponse">
+              {{item}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-footer question-footer align-center d-flex">
+        <div class="question-vote-total grey-font mr-auto">6
+          votes</div>
+        <div class="question-skip action-font bold text-uppercase" (click)="skipQuestion()">Skip</div>
+        <div class="question-submit button-small bd-highlight" (click)="onSubmit()">
+          <div>Submit</div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #createQuestion [ngIf]="suggestQuestionVisible && !suggestQuestionSuccessMsg">
+      <div class="card-body question-body">
+        <div class="p-3">
+          <h5>Would you like to learn something else about the cannabis industry? Please, submit your question, and
+            we'll
+            poll our members for answers.</h5>
+          <textarea placeholder="Enter your question here.."></textarea>
+        </div>
+      </div>
+      <div class="card-footer question-footer align-center">
+        <div class="flex"></div>
+        <div class="question-skip action-font bold text-uppercase" (click)="skipQuestion()">Skip</div>
+        <div class="question-submit button-small bd-highlight" (click)="onSubmit()">
+          <div>Submit</div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #createQuestionSubmitSuccess [ngIf]="!suggestQuestionVisible && suggestQuestionSuccessMsg">
+      <div class="card-body question-body text-center">
+        <h5>Thank you for submitting your question ,We will review it shortly.</h5>
+      </div>
+
+      <div class="card-footer question-footer align-center d-flex">
+        <div class="row">
+          <div class=" col-md-6">
+            <button class="button-outline btn btn-sm float-right float-md-right mb-2 mb-sm-2 mb-md-0" (click)="suggestQuestion()">SUGGEST
+              ANOTHER QUESTION</button>
+          </div>
+          <div class="col-md-6 ">
+            <button class="button-small float-right float-md-left" form="profileForm" (click)="skipQuestion()">ANSWER
+              QUESTION</button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

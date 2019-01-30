@@ -1,0 +1,77 @@
+<ng-template #contentLogin let-modal>
+  <div class="loginPopupPanel popupPanel flex-grow-1" [ngClass]="{open: isOpen}">
+    <div class="close-icon float-right" title="Close" (click)="modal.dismiss('Cross click')">×</div>
+    <div class="clearfix"></div>
+    <div class="popupContent top24">
+      <div class="row">
+        <div class="item col-md-6 login-container" [ngClass]="{active: isLoginVisible}">
+          <h2>Login</h2>
+          <form class="top24" role="form" (submit)="login()">
+            <input type="email" name="email" autocomplete="email" placeholder="email" [(ngModel)]="email" required="">
+            <input type="password" class="top6" placeholder="password" name="password" [(ngModel)]="password" required="">
+            <div class="text-center link top12 forgotPassword">Forgot password?</div>
+            <div class="">
+              <button type="submit" class="button-small label top24" style="width:100%;">Login</button>
+            </div>
+          </form>
+        </div>
+        <div class="item col-md-6 sign-up-container" [ngClass]="{active: !isLoginVisible}">
+          <h2>Create account</h2>
+          <form class="top24">
+            <input type="email" name="email" autocomplete="email" placeholder="email">
+            <div class="top6 password-strength-container">
+              <input type="{{passwordInputType}}" class="flex-fill" placeholder="password" [(ngModel)]="signupPassword"
+                [ngModelOptions]="{standalone: true}" minlength="5" maxlength="50" required>
+              <ng2-password-strength-bar class="pw-strength" [passwordToCheck]="signupPassword" [barLabel]="barLabel"
+                [barColors]="myColors">
+              </ng2-password-strength-bar>
+            </div>
+            <div class="text-center top12">
+              <span class="checkboxContainer">
+                <input type="checkbox" value="on" id="gwt-uid-65" tabindex="0" (change)="showPasswordChanged($event)">
+                <label for="gwt-uid-65">show password</label>
+              </span>
+            </div>
+            <div class="button-outline top24">
+              <div class="label">Signup</div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row signup-login-switch">
+        <div class="col-md-12">
+          <h3>{{signUpLoginSwitchLabelText}}</h3>
+          <div class="button-outline top12" (click)="switchLoginSignup()">
+            <div class="label">{{signUpLoginSwitchButtonText}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center oauth-container row">
+      <div class="col-md-12 text-center">
+        <div class="signup-with-header">or signup with</div>
+        <ul class="">
+          <li class="icon google_ico" title="Google">
+            <fa-icon [icon]="['fab', 'google']"></fa-icon>
+          </li>
+          <li class="icon facebook_ico" title="Facebook">
+            <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+          </li>
+          <li class="icon twitter_ico" title="Twitter">
+            <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+          </li>
+          <li class="icon linkedin_ico" title="linkedin" (click)="signInWithLinkedIn()">
+            <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="login-footer row text-center justify-center padding24">
+      <p class="col-md-12 text-center">
+        <span>By creating a LeafList account, you agree to our </span>
+        <span class="link">Terms of Service</span>
+        <span>.</span>
+      </p>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,17 @@
+<div id="mainContainer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav no-gutters no-padding">
+          <li *ngFor="let page of pages;" class="nav-item pointer" [ngClass]="{'active': currentPage === page}"
+            routerLink="/myaccount/{{page.segmentId}}">
+            <span class="nav-link">{{page.label}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+</div>

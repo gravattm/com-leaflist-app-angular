@@ -1,0 +1,47 @@
+<ng-template #contentDoner let-modal>
+  <div class="donerPopupPanel popupPanel" [ngClass]="{open: isOpen}">
+    <div class="popupContent">
+      <div class="card">
+        <div class="card-header">
+          <h4>ALREADY A DONOR?</h4>
+        </div>
+        <form [formGroup]="donerForm" (ngSubmit)="onSubmitForm()">
+          <div class="card-body">
+            <p>Enter your information below, and once approved, you can proudly show off your donor badge on
+              your profile page.</p>
+            <div class="form-group">
+              <label for="firstName" class="label">FIRST NAME</label>
+              <input class="form-control" type="text" id="firstName" class="form-control" name="firstName"
+                formControlName="firstName" maxlength="100">
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="label">LAST NAME</label>
+              <input class="form-control" type="text" id="lastName" class="form-control" name="lastName"
+                formControlName="lastName" maxlength="100">
+            </div>
+            <div class="form-group">
+              <label for="email" class="label">EMAIL</label>
+              <input class="form-control" type="text" id="email" class="form-control" name="email" rows="4"
+                formControlName="email" maxlength="100">
+            </div>
+            <div class="form-group">
+              <label for="company-name" class="label">COMPANY NAME</label>
+              <input class="form-control" type="text" id="company-name" class="form-control" name="company-name" rows="4"
+                formControlName="companyName" maxlength="100">
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="declaration" name="declaration" rows="4" formControlName="declaration">
+              <label class="form-check-label" for="declaration">I give consent to LeafList to contact this organization
+                about my donation</label>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="flex"></div>
+            <button class="button-outline btn " (click)="modal.dismiss('Cross click')">Cancel</button>
+            <button class="button-small left24" type="submit" [disabled]="!donerForm.valid" (click)="modal.close('Save click')">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

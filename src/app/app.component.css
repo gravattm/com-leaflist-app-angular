@@ -1,0 +1,23 @@
+#main {
+  margin-top: 72px;
+}
+
+.app-footer {
+  margin-top: -17px;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -72px;
+  visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  #main {
+    margin-top: 90px;
+  }
+  a.anchor {
+    top: -90px;
+  }
+}

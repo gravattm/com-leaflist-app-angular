@@ -1,0 +1,25 @@
+<div class="organisation-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="row mt-3">
+        <div class="col-12 col-sm-12 col-md-4">
+          <img class="img-fluid" src="https://static.wixstatic.com/media/0c8290_336b00f0efec4fd0a0a03ec46c51c8d3.png">
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 pb-3">
+          <div class="action-font link">Green Lion Partners</div>
+          <div>Consulting/Business Development, Entrepreneur, Investor</div>
+          <div>1307 22nd St, Denver, CO, USA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col d-flex justify-content-center align-center button-under-widget flex-column">
+    <div class="button-small initiation_btn " *ngIf="isVouchEnabled">
+      <div *ngIf="!isDoner ">Vouch</div>
+      <div *ngIf="isDoner">Donate Now</div>
+    </div>
+    <div class="button-flat action-font top12 link initiation_btn " aria-hidden="true" *ngIf="isDoner" (click)="onAlreadyDonerClicked()">
+      <div class="gwt-Label">Already a donor?</div>
+    </div>
+  </div>
+</div>

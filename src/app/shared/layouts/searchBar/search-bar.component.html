@@ -1,0 +1,6 @@
+<div class="searchBox mx-auto" [ngClass]="{active: isOpen}">
+  <form class="form-inline my-2 my-lg-0 mx-md-auto d-md-flex" (keydown)="onEnterPressed($event)">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString" name="search" />
+    <div class="cancel-btn" (click)="onCloseClicked()">×</div>
+  </form>
+</div>

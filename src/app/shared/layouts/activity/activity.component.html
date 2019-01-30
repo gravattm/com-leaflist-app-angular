@@ -1,0 +1,29 @@
+<div class="p-3">
+  <div class="activity-points-container">
+    <img src="../../../../assets/images/leaf-icon.svg" class="leaf-icon" />
+    <div class="activity-points body-secondary left24">767</div>
+  </div>
+  <div class="progress-container top24">
+    <div class="progress-header">Next leaf progress</div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar action-background"></div>
+    </div>
+  </div>
+  <div class="activity-list-container top24">
+    <ul class="activity-list">
+      <li *ngFor='let activity of (isCompactView ? activities.slice(0,5) : activities)'>
+        <div class="points-total">
+          +{{activity.point}}
+        </div>
+        <div class="points-description-container left24">
+          <div class="points-description">
+            {{activity.description}}
+          </div>
+          <div class="points-date body-secondary">
+            {{activity.pointDate}}
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

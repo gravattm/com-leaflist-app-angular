@@ -1,0 +1,78 @@
+#landingWrapper {
+  width: 100%;
+  height: 240px;
+  max-height: 240px;
+  position: relative;
+  padding: 0;
+}
+
+#landingContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#headerContent {
+  height: auto;
+  padding: 24px;
+}
+
+#landingHeader h4 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+#signupWrapper {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: -40px;
+}
+
+#circleOverlay {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #landingWrapper {
+    background: url("../../../../assets/images/landing1.png") no-repeat;
+    background-size: cover;
+    padding-top: 39.52%;
+    /* (img-height / img-width * container-width) */
+    height: 0;
+    margin: 24px auto 0;
+  }
+  #landingHeader h4 {
+    max-width: 300px;
+  }
+  #headerContent {
+    width: 80%;
+    max-width: 365px;
+    padding: 0;
+  }
+  #signupWrapper {
+    bottom: 20px;
+  }
+  #circleOverlay {
+    display: block;
+    background-image: url("../../../../assets/images/circle-overlay.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    height: 96px;
+    width: 96px;
+    right: 12%;
+    bottom: -25px;
+  }
+}
+
+@media (min-width: 998px) {
+  #signupWrapper {
+    bottom: 50px;
+  }
+}

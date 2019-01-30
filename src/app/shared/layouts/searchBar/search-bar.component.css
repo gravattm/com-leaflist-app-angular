@@ -1,0 +1,79 @@
+.searchBox {
+  display: none;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
+  border: solid 1px #d9d9d9;
+  border-radius: 18px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 24px;
+  height: 36px;
+}
+
+.searchBox.active {
+  display: block;
+}
+
+.searchBox form {
+  position: relative;
+  margin: 0 !important;
+  width: 100%;
+}
+
+.searchBox .form-control {
+  border: initial;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 18px;
+  padding-right: 24px;
+  margin: 0;
+  font: 400 11px system-ui;
+}
+
+.search .form-control:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.cancel-btn {
+  color: rgb(153, 153, 153);
+  cursor: pointer;
+  display: block;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+}
+
+.form-inline .form-control {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .searchBox {
+    display: block;
+    border-radius: 24px;
+    text-align: center;
+    height: 48px;
+    flex: 1;
+    max-width: 360px;
+  }
+  .searchBox .form-control {
+    height: 48px;
+    line-height: 48px;
+    flex: 1;
+  }
+  .cancel-btn {
+    display: none;
+  }
+}
+
+/* @media (min-width: 992px) {
+  .searchBox {}
+} */

@@ -1,0 +1,64 @@
+.donerPopupPanel {
+    height: auto;
+    clip-path: inset(50% 50% 50% 50%);
+    transition: clip-path .25s ease-out;
+    text-transform: uppercase;
+}
+
+.donerPopupPanel.open {
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.card {
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+    .donerPopupPanel {
+        min-height: auto;
+        max-width: 768px;
+        height: auto;
+    }
+}
+
+.donerPopupPanel label {
+    height: 14px;
+    margin: 0;
+}
+
+.donerPopupPanel .row .item {
+    display: none;
+}
+
+.donerPopupPanel .row .item.active {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .donerPopupPanel {
+        clip: rect(auto, auto, auto, auto);
+    }
+}
+
+.card-footer {
+    border-top: 1px solid #f1f4f9 !important;
+    align-items: center;
+    padding: 24px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-body {
+    padding: 0 24px;
+}
+
+.row {
+    margin: 0;
+}
+
+.top6 {
+    padding-top: 6px !important;
+}

@@ -1,0 +1,97 @@
+.card {
+  margin-bottom: 0px;
+}
+
+.progress-bar-bg {
+  max-width: 100%;
+  background: #f1f4f9;
+  margin-top: 6px;
+  height: 6px;
+}
+
+.progress-bar {
+  max-width: 100%;
+  width: 30%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(72, 204, 150, 0.5);
+  transition: width .5s ease-out;
+}
+
+.personal .progress-bar {
+  width: 7.14%;
+}
+
+.experience .progress-bar {
+  width: 21.4%;
+}
+
+.rating .progress-bar {
+  width: 35.7%;
+}
+
+.connections .progress-bar {
+  width: 50%;
+}
+
+.organizations .progress-bar {
+  width: 64.28%;
+}
+
+.nonprofit .progress-bar {
+  width: 78.56%;
+}
+
+.summary .progress-bar {
+  width: 92.84%;
+}
+
+.progress-sections {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+
+.progress-sections li {
+  margin-top: -15px;
+  width: 96px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.progress-sections li .progress-circle {
+  background: #f1f4f9;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 24px;
+  width: 24px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.progress-sections li.current .progress-circle {
+  background: #fff;
+  border: 8px solid #58e0ab !important;
+  box-shadow: 0 5px 15px rgba(72, 204, 150, 0.5);
+}
+
+.progress-sections li.completed .progress-circle {
+  border: 12px solid #58e0ab;
+  box-shadow: 0 5px 15px rgba(72, 204, 150, 0.5);
+}
+
+.progress-sections li .progress-section-label {
+  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

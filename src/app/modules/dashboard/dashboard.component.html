@@ -1,0 +1,51 @@
+<div id="mainContainer">
+  <div class="container">
+    <h1>Dashboard</h1>
+    <div class="row top24">
+      <div class="col-md-7 no-gutters no-padding">
+        <leaflist-question-dashboard></leaflist-question-dashboard>
+      </div>
+      <div class="col-md-5 no-gutters no-padding mt-3 mt-sm-3 mt-md-0">
+        <div class="card margin12">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <h2>My Activity</h2>
+              </div>
+              <div class="col-12 col-md-6 text-left text-md-right">
+                <div class="text-left text-md-right top24" [routerLink]="['/myaccount/activity']">
+                  <span class="link action-font btn-link">View all activity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <leaflist-activity [isCompactView]="true"></leaflist-activity>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="directRequests">
+      <p>&nbsp;</p>
+      <leaflist-direct-request [isDashboard]="true"></leaflist-direct-request>
+    </ng-container>
+    <ng-container *ngIf="connectionApprovals">
+      <p>&nbsp;</p>
+      <leaflist-connection-approval [isDashboard]="true"></leaflist-connection-approval>
+    </ng-container>
+    <ng-container *ngIf="testimonialApprovals">
+      <p>&nbsp;</p>
+      <leaflist-testimonial-approval></leaflist-testimonial-approval>
+    </ng-container>
+    <ng-container *ngIf="inTheNews">
+      <p>&nbsp;</p>
+      <leaflist-news></leaflist-news>
+    </ng-container>
+    <ng-container *ngIf="introductions">
+      <p>&nbsp;</p>
+      <leaflist-introduction></leaflist-introduction>
+    </ng-container>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+</div>

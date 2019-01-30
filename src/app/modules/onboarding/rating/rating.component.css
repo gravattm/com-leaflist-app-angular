@@ -1,0 +1,46 @@
+@media only screen and (max-width: 576px) {
+    .leaf-point, .leaf-rating {
+        display: none;
+    }
+}
+
+@media (min-width: 575px) {
+    .leaf-point, .leaf-rating {
+        display: none;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
+    .leaf-point, .leaf-rating {
+        display: none;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .leaf-point, .leaf-rating {
+        display: none;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .leaf-point {
+        display: block;
+    }
+    .leaf-rating {
+        display: block;
+    }
+}
+
+/* mdeia screen 1400 */
+
+@media (min-width: 1400px) {
+    .leaf-point, .leaf-rating {
+        display: block;
+    }
+}

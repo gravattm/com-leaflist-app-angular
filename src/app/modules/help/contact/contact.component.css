@@ -1,0 +1,15 @@
+textarea {
+  border-radius: 0;
+}
+
+label {
+  color: #777;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 24px 0 3px;
+  margin-bottom: 0;
+}
+
+p {
+  color: #62646d;
+}

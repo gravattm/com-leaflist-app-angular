@@ -1,0 +1,18 @@
+.endorsement-circle {
+    font-size: 16px;
+    flex: 0 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    box-shadow: 0 5px 15px #eee;
+}
+
+.action-background {
+    height: 6px;
+    box-shadow: 0 5px 15px rgba(72, 204, 150, 0.5);
+    width: 0;
+    transition: width 2s ease-out;
+}

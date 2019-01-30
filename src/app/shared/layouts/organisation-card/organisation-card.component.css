@@ -1,0 +1,11 @@
+.organisation-card {
+    margin-bottom: 24px !important;
+}
+
+.organisation-card .card {
+    margin: 0px !important;
+}
+
+.organisation-card .card-body {
+    padding: 0px !important;
+}

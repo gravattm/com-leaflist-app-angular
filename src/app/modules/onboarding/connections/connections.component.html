@@ -1,0 +1,40 @@
+<div class="row" *ngIf="!introDisabled; else addConnection">
+    <div class="offset-md-3 col-md-6">
+        <div class="row">
+            <p>By only certifying your relationships on LeafList with individuals that you would professionally
+                recommend, the platform can more accurately represent your great reputation! Also, it helps LeafList to
+                act as a place to help you positively impact your real-life professional network. They will have to
+                confirm that you know each other and certify their relationship with you.</p>
+        </div>
+        <div class="row align-content-center justify-content-center">
+            <button class="button-small left24" (click)="onStratConnecting()">START CONNECTING WITH PEOPLE</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #addConnection>
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <div class="row">
+                <p>Please choose your connections carefully. You should only connect with people you have working
+                    relationships with. This will be the only time you can send multiple requests at once.</p>
+            </div>
+            <div class="row align-content-center justify-content-center">
+                <div class="searchBox mx-auto" [ngClass]="{active: isOpen}">
+                    <form class="form-inline my-2 my-lg-0 mx-md-auto d-md-flex" (keydown)="onEnterPressed($event)">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString"
+                            name="search" />
+                        <div class="cancel-btn mr-3" (click)="onCloseClicked()">×</div>
+                    </form>
+                </div>
+            </div>
+            <div class="row py-2" *ngIf="searchContent === ''">
+                <h2>Recommended</h2>
+            </div>
+            <div class="row justify-center flex-wrap">
+                <leaflist-person-card [isNewRequest]="true"></leaflist-person-card>
+                <leaflist-person-card [isNewRequest]="true"></leaflist-person-card>
+            </div>
+        </div>
+    </div>
+</ng-template>

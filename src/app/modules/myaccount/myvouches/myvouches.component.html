@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-12 no-gutters no-padding">
+    <div class="card margin12">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>My Vouches</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row noshrink experience-card top24" *ngIf="!organisations; else organisationList">
+          <div class="col-md-12 text-center grey-font font-large">
+            You have not vouched for any organizations yet. Help LeafList community by vouching for organizations that
+            you trust.
+          </div>
+        </div>
+        <ng-template #organisationList>
+          <div class="row justify-center flex-wrap ">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 mt-4" *ngFor="let i of [1,2,3,4]">
+              <leaflist-organisation-card></leaflist-organisation-card>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

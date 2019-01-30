@@ -1,0 +1,22 @@
+<div class="question-container">
+  <div class="card-header question-header">
+    <h4 class="black-font section-heading">Where do you stand?</h4>
+    <div class="text-center link top12 forgotPassword">Suggest question</div>
+  </div>
+  <div class="card-body question-body ">
+    <h5>Have you enjoyed your experience at dispensaries?</h5>
+    <ul class="question-answers">
+      <li *ngFor="let item of items, let i = index" [attr.data-selected]="item === selectedResponse" (click)="onSelect(item)"
+        [class.selected]="item === selectedResponse">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <div class="card-footer question-footer align-center d-flex">
+    <div class="question-vote-total grey-font mr-auto">6 votes</div>
+    <div class="question-skip action-font bold text-uppercase">Skip</div>
+    <div class="question-submit button-small bd-highlight">
+      <div>Submit</div>
+    </div>
+  </div>
+</div>

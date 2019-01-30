@@ -1,0 +1,36 @@
+<div class="row" *ngIf="!introDisabled; else addVouch">
+    <div class="offset-md-3 col-md-6">
+        <div class="row">
+            <p>Vouching for an organization means that you have had a positive interaction with this organization and
+                believe they represent a positive influence on the cannabis industry. After vouching for an
+                organization, you can leave a testimonial. These actions will impact both your and the organization's
+                reputation.</p>
+        </div>
+        <div class="row align-content-center justify-content-center">
+            <button class="button-small left24" (click)="onVouchNow()">VOUCH NOW</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #addVouch>
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <div class="row align-content-center justify-content-center">
+                <div class="searchBox mx-auto" [ngClass]="{active: isOpen}">
+                    <form class="form-inline my-2 my-lg-0 mx-md-auto d-md-flex" (keydown)="onEnterPressed($event)">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchString"
+                            name="search" />
+                        <div class="cancel-btn mr-3" (click)="onCloseClicked()">×</div>
+                    </form>
+                </div>
+            </div>
+            <div class="row py-2 align-content-center justify-content-center" *ngIf="searchContent === ''">
+                <h2>Recommended</h2>
+            </div>
+            <div class="justify-center flex-wrap">
+                <leaflist-organisation-card [isVouchEnabled]="true"></leaflist-organisation-card>
+                <leaflist-organisation-card [isVouchEnabled]="true"></leaflist-organisation-card>
+            </div>
+        </div>
+    </div>
+</ng-template>

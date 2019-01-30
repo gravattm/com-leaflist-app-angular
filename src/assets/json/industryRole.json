@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "roleName": "Ancillary Products"
+    },
+    {
+        "id": 2,
+        "roleName": "Consulting/Business Development"
+    },
+    {
+        "id": 3,
+        "roleName": "Cultivation/Processing"
+    },
+    {
+        "id": 4,
+        "roleName": "Distribution"
+    },
+    {
+        "id": 5,
+        "roleName": "Entrepreneur"
+    },
+    {
+        "id": 6,
+        "roleName": "Financial Services"
+    },
+    {
+        "id": 7,
+        "roleName": "Infused Products"
+    },
+    {
+        "id": 8,
+        "roleName": "Investor"
+    },
+    {
+        "id": 9,
+        "roleName": "Learning about cannabis"
+    },
+    {
+        "id": 10,
+        "roleName": "Legal"
+    },
+    {
+        "id": 11,
+        "roleName": "Marketing/Advertising Services"
+    },
+    {
+        "id": 12,
+        "roleName": "Media"
+    },
+    {
+        "id": 13,
+        "roleName": "Regulation/Policy/Advocacy"
+    },
+    {
+        "id": 14,
+        "roleName": "Retail"
+    },
+    {
+        "id": 15,
+        "roleName": "Science/Research"
+    },
+    {
+        "id": 16,
+        "roleName": "Technology/Software"
+    },
+    {
+        "id": 17,
+        "roleName": "Testing"
+    }
+]
